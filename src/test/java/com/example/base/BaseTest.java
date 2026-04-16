@@ -12,6 +12,9 @@ public class BaseTest {
 
     @BeforeAll
     public static void setUp() {
+        if (System.getenv("CI") != null) {
+            Configuration.headless = true;
+        }
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
@@ -26,6 +29,7 @@ public class BaseTest {
                 .savePageSource(false));
 
         System.out.println("✅ Allure listener добавлен");
+
     }
 
     @AfterEach
