@@ -3,6 +3,7 @@ package com.example.tests;
 import com.example.base.BaseTest;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +18,7 @@ public class LoginTest  extends BaseTest {
     private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
 
     @Test
+    @Tag("Login")
     void succesfulLoginWithStandardUser(){
       LoginPage loginPage = new LoginPage();
         ProductsPage productsPage = loginPage
@@ -31,6 +33,7 @@ public class LoginTest  extends BaseTest {
 
     }
     @Test
+    @Tag("Login")
     void loginWithLockedOutUserShouldShowError(){
         LoginPage loginPage = new LoginPage();
         loginPage
@@ -44,6 +47,7 @@ public class LoginTest  extends BaseTest {
         System.out.println("Ошибка отображается корректно");
     }
     @Test
+    @Tag("Login")
     void loginWithEmptyCredentials(){
     LoginPage loginPage = new LoginPage();
 
